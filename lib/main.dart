@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_signin_button/flutter_signin_button.dart';
 
 void main() {
   runApp(
@@ -20,9 +21,19 @@ class Home extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.amber,
       ),
-      body: Text(
-          'Here is the main body',
-      ),
+      body: Column(
+        children: [
+          SignInButton(
+              Buttons.Apple,
+              // text : 'Login from google',
+              onPressed: (){
+            print('I am clicked from google');
+          }),
+          SignInButton(Buttons.FacebookNew, onPressed: (){
+            print('i am clicked from facebook');
+          }),
+          SignInButton(Buttons.Google, onPressed: (){})
+      ]),
     )
     );
   }
